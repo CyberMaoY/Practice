@@ -1,0 +1,38 @@
+//enter a number, and it will calculate the fibonacci and factorial of the number.
+
+//factorial
+int Fac(int i)
+{
+	if (i <= 1)
+		return 1;
+	else
+		return i* Fac(i - 1);
+}
+//Fibonacci
+int count = 0;
+int Fib(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (n>2)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		n--;
+		count++;
+	}
+	return c;
+}
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	int ret = Fac(n);
+	int fib = Fib(n);
+	printf("factorial of %d:%d\n", n, ret);
+	printf("Fibonacci of %d:%d - counts:%d\n", n, fib, count);
+
+	return 0;
+}
